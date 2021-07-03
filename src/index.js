@@ -19,39 +19,41 @@ import reactDom from 'react-dom';
 // rootDiv.appendChild(time);
 // *********************************************************
 
+// class MovieCard extends React.Component
+
 
 // *********************************************************
 // Components
 
 // Class Based Component
-class MyComponent extends React.Component
-{
-  render()
-  {
-    return <h2>This is my component</h2>
-  }
-}
+// class MyComponent extends React.Component
+// {
+//   render()
+//   {
+//     return <h2>This is my component</h2>
+//   }
+// }
 
 // Function Based Component
-const Greeting = (props) =>
-{
-  return (
-    <div>
-      <h1>Hello {props.name}</h1>
-      <h2>You are {props.age} years old</h2>
-    </div>
-  )
-}
+// const Greeting = (props) =>
+// {
+//   return (
+//     <div>
+//       <h1>Hello {props.name}</h1>
+//       <h2>You are {props.age} years old</h2>
+//     </div>
+//   )
+// }
 
-ReactDOM.render
-(
-  <div>
-    <Greeting name="Austin" age={27} />
-    <Greeting name="Robert" age="35" />
-    <MyComponent/>
-  </div>,
-  document.getElementById('root')
-  )
+// ReactDOM.render
+// (
+//   <div>
+//     <Greeting name="Austin" age={27} />
+//     <Greeting name="Robert" age="35" />
+//     <MyComponent/>
+//   </div>,
+//   document.getElementById('root')
+//   )
 
 // *********************************************************
 // Getting crazy with props
