@@ -19,93 +19,45 @@ import reactDom from 'react-dom';
 // rootDiv.appendChild(time);
 // *********************************************************
 
-// class MovieCard extends React.Component
+const MovieCard = (props) =>
+{
+  return (
+    <div className="flex-container">
+      <div className="superman-center">
+        <img src={props.posterUrl}/>
+      </div>
+      <div className="flex-column">
+        <h1>{props.title}</h1>
+        <div>
+          <h2 className="g-box">{props.type}</h2>
+          <h2 className="g-box">{props.rated}</h2>
+          <h2 className="g-box">{props.runtime}</h2>
+          <h2 className="g-box">{props.genre}</h2>
+        </div>
+        <h2>Plot</h2>
+        <p>{props.plot}</p>
+        <h2>Actors</h2>
+        <p>{props.actors}</p>
+      </div>
+    </div>
+  )
+}
 
-
-// *********************************************************
-// Components
-
-// Class Based Component
-// class MyComponent extends React.Component
-// {
-//   render()
-//   {
-//     return <h2>This is my component</h2>
-//   }
-// }
-
-// Function Based Component
-// const Greeting = (props) =>
-// {
-//   return (
-//     <div>
-//       <h1>Hello {props.name}</h1>
-//       <h2>You are {props.age} years old</h2>
-//     </div>
-//   )
-// }
-
-// ReactDOM.render
-// (
-//   <div>
-//     <Greeting name="Austin" age={27} />
-//     <Greeting name="Robert" age="35" />
-//     <MyComponent/>
-//   </div>,
-//   document.getElementById('root')
-//   )
-
-// *********************************************************
-// Getting crazy with props
-
-// const Post = (props) =>
-// {
-//   return (
-//     <div>
-//       <img src={props.profileImage} />
-//       <p><strong>{props.name}</strong></p>
-//       <p>{props.text}</p>
-//       <button>Like</button>
-//       <button>Share</button>
-//     </div>
-//   )
-// }
-
-// ReactDOM.render
-// (
-//   <div>
-//     <Post profileImage="./img/image" name="John Doe" text={"some text"} />
-//   </div>,
-//   document.getElementById('root'
-// )
-// *********************************************************  
-  
-// *********************************************************
-// "JSX" Idk what that means exactly, but it's pret cool
-// Component Stuff
-
-
-// const myAge = 27;
-// setInterval(() => {
-//   ReactDOM.render
-//   (
-//     <div>
-//       <p>Hello  from React App</p>
-//       <p>It is {new Date().toLocaleTimeString()}</p>
-//       <p>2 + 2 = {2+2}</p>
-//       <p>Am I 18 years or older: {myAge >= 18 ? 'yes' : 'no'}</p>
-//     </div>,
-//     document.getElementById('root')
-//   )
-// }, 1000);
-// *********************************************************
-
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
+ReactDOM.render
+(
+  <div>
+    <MovieCard 
+    title="Batman v Superman: Dawn of Justice" 
+    type="Movie!" 
+    rated="pg-13" 
+    runtime="138 minutes" 
+    genre="Action, Adventure, Sci-Fi" 
+    plot="Fearing that the actions of Superman are left unchecked, Batman takes on the Man of Steel, while the world wrestles with what kind of a hero it really needs." 
+    actors="Ben Affleck, Henry Cavill, Amy Adams, Jesse Eisenberg" 
+    posterUrl="https://upload.wikimedia.org/wikipedia/en/3/35/Supermanflying.png"/>
+  </div>,
+  document.getElementById('root')
+  )
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
