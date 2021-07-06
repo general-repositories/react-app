@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import reactDom from 'react-dom';
+import {useState} from 'react';
+import {ErrorComponent} from './components/StateExample';
 
 // *********************************************************
 // Writing to the dom with somewhat normal JS
@@ -19,45 +21,56 @@ import reactDom from 'react-dom';
 // rootDiv.appendChild(time);
 // *********************************************************
 
-const MovieCard = (props) =>
-{
-  return (
-    <div className="flex-container">
-      <div className="superman-center">
-        <img src={props.posterUrl}/>
-      </div>
-      <div className="flex-column">
-        <h1>{props.title}</h1>
-        <div>
-          <h2 className="g-box">{props.type}</h2>
-          <h2 className="g-box">{props.rated}</h2>
-          <h2 className="g-box">{props.runtime}</h2>
-          <h2 className="g-box">{props.genre}</h2>
-        </div>
-        <h2>Plot</h2>
-        <p>{props.plot}</p>
-        <h2>Actors</h2>
-        <p>{props.actors}</p>
-      </div>
-    </div>
-  )
-}
 
 ReactDOM.render
 (
   <div>
-    <MovieCard 
-    title="Batman v Superman: Dawn of Justice" 
-    type="Movie!" 
-    rated="pg-13" 
-    runtime="138 minutes" 
-    genre="Action, Adventure, Sci-Fi" 
-    plot="Fearing that the actions of Superman are left unchecked, Batman takes on the Man of Steel, while the world wrestles with what kind of a hero it really needs." 
-    actors="Ben Affleck, Henry Cavill, Amy Adams, Jesse Eisenberg" 
-    posterUrl="https://upload.wikimedia.org/wikipedia/en/3/35/Supermanflying.png"/>
+    <ErrorComponent/>
   </div>,
   document.getElementById('root')
   )
+
+// *********************************************************
+// Movie Card App Thing
+// const MovieCard = (props) =>
+// {
+//   return (
+//     <div className="flex-container">
+//       <div className="superman-center">
+//         <img src={props.posterUrl}/>
+//       </div>
+//       <div className="flex-column">
+//         <h1>{props.title}</h1>
+//         <div>
+//           <h2 className="g-box">{props.type}</h2>
+//           <h2 className="g-box">{props.rated}</h2>
+//           <h2 className="g-box">{props.runtime}</h2>
+//           <h2 className="g-box">{props.genre}</h2>
+//         </div>
+//         <h2>Plot</h2>
+//         <p>{props.plot}</p>
+//         <h2>Actors</h2>
+//         <p>{props.actors}</p>
+//       </div>
+//     </div>
+//   )
+// }
+
+// ReactDOM.render
+// (
+//   <div>
+//     <MovieCard 
+//     title="Batman v Superman: Dawn of Justice" 
+//     type="Movie!" 
+//     rated="pg-13" 
+//     runtime="138 minutes" 
+//     genre="Action, Adventure, Sci-Fi" 
+//     plot="Fearing that the actions of Superman are left unchecked, Batman takes on the Man of Steel, while the world wrestles with what kind of a hero it really needs." 
+//     actors="Ben Affleck, Henry Cavill, Amy Adams, Jesse Eisenberg" 
+//     posterUrl="https://upload.wikimedia.org/wikipedia/en/3/35/Supermanflying.png"/>
+//   </div>,
+//   document.getElementById('root')
+//   )
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
