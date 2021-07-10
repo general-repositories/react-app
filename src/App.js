@@ -1,25 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import MovieService from './service/movie.service';
+import { useEffect } from 'react';
+import { MovieList } from './components/movieList';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const App = () => {
+
+  return(
+    <div>
+      <MovieList/>
     </div>
-  );
+  )
+
+  // const {getMovies} = new MovieService();
+
+  // const [movieList, setMovieList] = useState();
+
+  // const getMovieList = async (title => {
+  //   const movies = await getMovies(title);
+  //   setMovieList(movies.Search)
+  // };
+
+  // useEffect(()) => {
+  //   getMovieList('star wars');
+  // }, (1);
 }
 
 export default App;
