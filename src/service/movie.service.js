@@ -1,28 +1,18 @@
-// export default class MovieService
-// {
-// 	async getMovies(title)
-// 	{
-// 		const apiKey = '7ea59a4d';
-// 		const response = await fetch(
-// 			`https://www.omdbapi.com/?s=${title}&apikey=${apiKey}`, {
-// 				method: "GET"
-// 			}
-// 		);
-
-// 		return response.json();
-// 	}
-// }
+import axios from 'axios';
+const apiKey = '7ea59a4d';
 export default class MovieService
 {
-	async getMovies(title)
+	getMovies(title,page=1)
 	{
-		const apiKey = '7ea59a4d';
-		const response = await fetch(
-			`https://www.omdbapi.com/?s=${title}&apikey=${apiKey}`, {
-				method: "GET"
-			}
-		);
+		return axios.get(`https://www.omdbapi.com/?s=${title}&page=${page}&apikey=${apiKey}`)
+		.then((response) => response.data)
+		.catch((error) => console.error(error));
+	}
 
-		return response.json();
+	getMovieByID(ID)
+	{
+		return axios.get(`https://www.omdbapi.com/?i=${ID}&apikey=${apiKey}`)
+		.then((response) => response.data)
+		.catch((error) => console.error(error));
 	}
 }
